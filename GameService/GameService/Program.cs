@@ -1,5 +1,5 @@
-using GameService.Interfaces;
-using GameService.Services;
+using RPSLSGame.Interfaces;
+using RPSLSGame.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IChoiceService, ChoiceService>();
+builder.Services.AddSingleton<IGameService, GameService>();
 builder.Services.AddHttpClient<IRandomNumberService, RandomNumberService>();
 
 

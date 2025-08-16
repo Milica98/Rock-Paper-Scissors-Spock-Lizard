@@ -1,11 +1,13 @@
-﻿using GameService.Models;
+﻿using RPSLSGame.Models;
 
-namespace GameService.Interfaces
+namespace RPSLSGame.Interfaces
 {
     public interface IChoiceService
     {
-        public IEnumerable<Choice> GetAllChoices();
+        public List<Choice> GetAllChoices();
 
         public Task<Choice> GetRandomChoiceAsync();
+
+        public Choice GetChoice(int id);
     }
 }

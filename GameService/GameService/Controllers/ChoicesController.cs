@@ -1,8 +1,8 @@
-﻿using GameService.Interfaces;
-using GameService.Models;
+﻿using RPSLSGame.Interfaces;
+using RPSLSGame.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GameService.Controllers
+namespace RPSLSGame.Controllers
 {
     [Route("")]
     [ApiController]

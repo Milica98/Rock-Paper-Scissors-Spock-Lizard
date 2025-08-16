@@ -1,29 +1,30 @@
-﻿using GameService.Interfaces;
-using GameService.Models;
+﻿using RPSLSGame.GameConfiguration;
+using RPSLSGame.Interfaces;
+using RPSLSGame.Models;
 
-namespace GameService.Services
+namespace RPSLSGame.Services
 {
     public class ChoiceService(IRandomNumberService randomNumberService) : IChoiceService
     {
-        private readonly List<Choice> _choices = [
-            new Choice(){Id = 1, Name = "rock"},
-            new Choice(){Id = 2, Name = "paper"},
-            new Choice(){Id = 3, Name = "scissors"},
-            new Choice(){Id = 4, Name = "lizard"},
-            new Choice(){Id = 5, Name = "spock"}
-        ];
-
-        public IEnumerable<Choice> GetAllChoices()
+        public List<Choice> GetAllChoices()
         {
-            return _choices;
+            return [.. GameConfig.winnerMap.Keys.Select((name, index) => new Choice() { Id = index + 1, Name = name})];
+        }
+
+        public Choice GetChoice(int id)
+        {
+            if (id > GameConfig.choiceMap.Count || id < 1)
+                throw new IndexOutOfRangeException("Choice Id has to be number between (including) 1 and " + GameConfig.choiceMap.Count);
+            return this.GetAllChoices()[id - 1];
         }
 
         public async Task<Choice> GetRandomChoiceAsync()
         {
+            List<Choice> choices = this.GetAllChoices();
             int randomNum = await randomNumberService.GetRandomPositiveNumberAsync();
-            int index = (randomNum - 1) % _choices.Count;
+            int index = (randomNum - 1) % choices.Count;
             
-            return _choices[index];
+            return choices[index];
         }
     }
 }

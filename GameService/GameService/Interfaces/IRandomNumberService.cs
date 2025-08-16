@@ -1,4 +1,4 @@
-﻿namespace GameService.Interfaces
+﻿namespace RPSLSGame.Interfaces
 {
     public interface IRandomNumberService
     {

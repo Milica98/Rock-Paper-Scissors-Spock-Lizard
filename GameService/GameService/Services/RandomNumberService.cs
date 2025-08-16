@@ -1,7 +1,7 @@
-﻿using GameService.Interfaces;
-using GameService.Models;
+﻿using RPSLSGame.Interfaces;
+using RPSLSGame.Models;
 
-namespace GameService.Services
+namespace RPSLSGame.Services
 {
     public class RandomNumberService(HttpClient httpClient) : IRandomNumberService
     {
