@@ -5,5 +5,7 @@ namespace GameService.Interfaces
     public interface IChoiceService
     {
         public IEnumerable<Choice> GetAllChoices();
+
+        public Task<Choice> GetRandomChoiceAsync();
     }
 }

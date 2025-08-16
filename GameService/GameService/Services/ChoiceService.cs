@@ -3,7 +3,7 @@ using GameService.Models;
 
 namespace GameService.Services
 {
-    public class ChoiceService : IChoiceService
+    public class ChoiceService(IRandomNumberService randomNumberService) : IChoiceService
     {
         private readonly List<Choice> _choices = [
             new Choice(){Id = 1, Name = "rock"},
@@ -16,6 +16,14 @@ namespace GameService.Services
         public IEnumerable<Choice> GetAllChoices()
         {
             return _choices;
-        } 
+        }
+
+        public async Task<Choice> GetRandomChoiceAsync()
+        {
+            int randomNum = await randomNumberService.GetRandomPositiveNumberAsync();
+            int index = (randomNum - 1) % _choices.Count;
+            
+            return _choices[index];
+        }
     }
 }

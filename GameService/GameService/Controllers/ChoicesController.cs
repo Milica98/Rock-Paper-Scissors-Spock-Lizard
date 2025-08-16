@@ -9,9 +9,24 @@ namespace GameService.Controllers
     public class ChoicesController(IChoiceService choiceService) : ControllerBase
     {
         [HttpGet("choices")]
-        public IEnumerable<Choice> Get()
+        public ActionResult<IEnumerable<Choice>> GetChoices()
         {
-            return choiceService.GetAllChoices();
+            IEnumerable<Choice> choices = choiceService.GetAllChoices();
+            return Ok(choices);
+        }
+
+        [HttpGet("choice")]
+        public async Task<ActionResult<Choice>> GetChoice()
+        {
+            try
+            {
+                Choice choice = await choiceService.GetRandomChoiceAsync();
+                return Ok(choice);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
     }
 }
