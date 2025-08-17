@@ -1,6 +1,7 @@
 ﻿using RPSLSGame.Interfaces;
 using RPSLSGame.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 
 namespace RPSLSGame.Controllers
 {

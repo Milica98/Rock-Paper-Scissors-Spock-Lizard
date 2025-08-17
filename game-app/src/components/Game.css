@@ -1,0 +1,15 @@
+.result{
+    padding: 1rem;
+    border: solid; 
+    margin: 2rem;
+
+    &.lose{
+      color: red;
+    }
+    &.win{
+      color: lightgreen;
+    }
+    &.tie {
+      color: orange;
+    }
+}
