@@ -26,13 +26,15 @@
 2. **Start frontend manualy:**  
     - Open Command Prompt
     - Navigate to cloned Rock-Paper-Scissors-Spock-Lizard folder
-    - If dependencies in game-app are not installed (node_modules), run command `cd game-app && call npm install && cd ..`
-    - Run command `cd game-app && npm start` 
+    - Navigate to game-app folder
+    - If dependencies in game-app are not installed (node_modules), run command `npm install`
+    - Run command `npm start` to start the app
 
 3. **Start backend manualy:**  
     - Open Command Prompt
     - Navigate to cloned Rock-Paper-Scissors-Spock-Lizard folder
-    - Run command `cd GameService\RPSLSGame && dotnet run`
+    - Navigate to GameService\RPSLSGame
+    - Run command `dotnet run`
 
 ## Notes
 
