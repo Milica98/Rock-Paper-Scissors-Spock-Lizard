@@ -28,7 +28,7 @@
     - Navigate to cloned Rock-Paper-Scissors-Spock-Lizard folder
     - Navigate to game-app folder
     - If dependencies in game-app are not installed (node_modules), run command `npm install`
-    - Run command `npm start` to start the app
+    - Run command `npm start`
 
 3. **Start backend manualy:**  
     - Open Command Prompt
