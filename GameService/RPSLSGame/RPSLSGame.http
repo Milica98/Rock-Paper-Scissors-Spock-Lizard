@@ -1,0 +1,6 @@
+@RPSLSGame_HostAddress = http://localhost:5158
+
+GET {{RPSLSGame_HostAddress}}/choices/
+Accept: application/json
+
+###
